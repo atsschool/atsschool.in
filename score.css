@@ -1,0 +1,185 @@
+/* ================= RESET ================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html,body{
+  width:100%;
+  overflow-x:hidden;
+}
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:white;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background-color:#641d77;
+  padding:15px 40px;
+  flex-wrap:wrap;
+  width:100%;
+}
+
+/* Logo */
+
+.logo img{
+  width:170px;
+  max-width:100%;
+}
+
+/* ================= NAV LINKS ================= */
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:25px;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  font-weight:500;
+  font-size:16px;
+}
+
+.nav-links a:hover{
+  color:#ffa500;
+}
+
+/* ================= LOGIN FORM ================= */
+
+#LOGIN{
+  width:90%;
+  max-width:420px;
+  margin:40px auto;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+  background:white;
+}
+
+/* Inputs */
+
+#LOGIN input{
+  width:100%;
+  max-width:80%;
+  padding:12px;
+  margin-top:6px;
+  margin-bottom:15px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:14px;
+}
+
+/* Button */
+
+button{
+  width:100%;
+  max-width:100%;
+  padding:12px;
+  background:#641d77;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:16px;
+  transition:0.3s;
+}
+
+button:hover{
+  background:#4c155b;
+}
+
+/* Message */
+
+#message{
+  text-align:center;
+  margin-top:15px;
+  font-weight:bold;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width:768px){
+
+  .navbar{
+    padding:15px 20px;
+  }
+
+  .logo img{
+    width:140px;
+  }
+
+  .nav-links{
+    gap:15px;
+  }
+
+  .nav-links a{
+    font-size:14px;
+  }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:480px){
+
+  .navbar{
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:10px;
+  }
+
+  .nav-links{
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+    gap:10px;
+  }
+
+  .nav-links a{
+    display:block;
+    padding:5px 0;
+  }
+
+  #LOGIN{
+    width:92%;
+    padding:20px 16px;
+  }
+
+}
+
+/* ================= SMALL PHONES ================= */
+
+@media (max-width:390px){
+
+  .logo img{
+    width:120px;
+  }
+
+  .nav-links a{
+    font-size:13px;
+  }
+
+  button{
+    font-size:14px;
+  }
+
+  #LOGIN{
+    width:65%;
+    padding:14px 14px;
+  }
+
+}

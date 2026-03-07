@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="score.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><img src="logo.jpeg" alt="Logo"></div>
+    <ul class="nav-links">
+      <li><a href="admin.html">Home</a></li>
+      <li><a href="registration.html">Register</a></li>
+      <li><a href="result.html">Result</a></li> 
+    </ul>
+  </nav>
+
+  <div id="LOGIN" style="text-align:center; margin-top:20px;">
+    <label>Register No:</label>
+<input type="text" id="searchReg" placeholder="Enter Registration Number" style="padding:10px; width:250px;"><br><br>
+<label for="searchReg">Date of Birth:</label>
+<input type="date" id="searchDOB" placeholder="Enter Date of Birth" style="padding:10px; width:250px;"><br><br>
+ <label>Score Obtained:</label>
+<input type="text" id="score" placeholder="Enter Score Obtained" style="padding:10px; width:250px;"><br><br>
+<button onclick="storescore()" style="padding:10px 20px;">Update Score</button>
+</div>
+ <p id="message"></p>
+
+  <!-- Firebase libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+  <!-- Your script -->
+  <script src="score.js"></script>
+
+</body>
+</html>

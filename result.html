@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ATS SCHOOL | Scholarship Result</title>
+
+<link rel="stylesheet" href="result.css">
+
+<!-- Firebase CDN -->
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+<script src="resultscript.js"></script>
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav class="navbar">
+    <div class="logo"><img src="logo.jpeg" alt="Logo"></div>
+
+  </nav>
+
+<p style="text-align: center; font-size: 25px; margin-top: 5% ; color: #ffa500; font-weight: bold;">Entrance Scholarship Result 2026-2027</p>
+
+
+<!-- SEARCH BOX -->
+
+<div id="LOGIN" style="text-align:center; margin-top:20px;">
+    <label>Register No:</label>
+<input type="text" id="searchReg" placeholder="Enter Registration Number" style="padding:10px; width:250px;"><br><br>
+<label for="searchReg">Date of Birth:</label>
+<input type="date" id="searchDOB" placeholder="Enter Date of Birth" style="padding:10px; width:250px;"><br><br>
+<button onclick="getResult()" style="padding:10px 20px;">Check Result</button>
+</div>
+
+
+<!-- RESULT TABLE -->
+
+<table id="result" border="10" style=" display: none; border-color:#ffa500; text-align:center;">
+
+<tr>
+<td colspan="2" style="text-align: center;"><b>Scholarship Result</b></td>
+</tr>
+
+<tr>
+<td>Student Name</td>
+<td id="studentName">-</td>
+</tr>
+
+<tr>
+<td>Registration Number</td>
+<td id="registrationNumber">-</td>
+</tr>
+
+<tr>
+<td>Date of Birth</td>
+<td id="dob">-</td>
+</tr>
+
+<tr>
+<td>Academic Year</td>
+<td id="year">2026-2027</td>
+</tr>
+
+<tr>
+<td>For Class</td>
+<td id="class">-</td>
+</tr>
+
+<tr>
+<td>Scholarship Awarded</td>
+<td id="scholarship">-</td>
+</tr>
+
+
+<tr>
+<td colspan="2">
+
+<div class="card">
+
+<h2>Scholarship Score</h2>
+
+<div class="circle">
+
+<svg width="160" height="160">
+
+<circle class="progress" id="progressCircle" cx="80" cy="80" r="70"></circle>
+
+
+</svg>
+
+<div class="score" id="score">0%</div>
+
+</div>
+
+<p>Entrance Exam Score</p>
+
+</div>
+
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2">
+Contact Office for Admission Process
+</td>
+</tr>
+
+</table>
+
+</body></html>

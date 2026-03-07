@@ -1,0 +1,272 @@
+/* ================= RESET ================= */
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:white;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background-color:#641d77;
+  padding:15px 40px;
+  min-height:90px;
+  flex-wrap:wrap;
+}
+
+.logo img{
+  width:180px;
+  max-width:100%;
+}
+
+/* ================= NAV LINKS ================= */
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:25px;
+  padding:0;
+  margin:0;
+}
+
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  font-weight:500;
+  font-size:16px;
+}
+
+.nav-links a:hover{
+  color:#ffa500;
+}
+
+/* ================= PAGE TITLE ================= */
+
+.title{
+  text-align:center;
+  font-size:28px;
+  font-weight:bold;
+  margin-top:30px;
+}
+
+/* ================= TABLE ================= */
+
+table{
+  margin:40px auto;
+  width:100%;
+  max-width:700PX;
+  border-collapse:collapse;
+  background-image:url("hexagon.jpeg");
+  background-repeat:no-repeat;
+  background-size:contain;
+  background-position:center;
+  background-blend-mode:lighten;
+  border:10px solid #ffa500;
+}
+
+td{
+  padding:15px;
+  border:1px solid #ddd;
+  font-size:18px;
+  word-break:break-word;
+}
+
+/* Inputs inside table */
+
+input{
+  width:100%;
+  max-width:250px;
+  padding:8px;
+  border-radius:5px;
+  border:1px solid #ccc;
+  font-size:14px;
+}
+
+/* Button inside table */
+
+button{
+  padding:8px 16px;
+  background:#641d77;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:16px;
+  transition: background 0.3s ease;
+}
+
+button:hover{
+  background:#4c155b;
+}
+
+/* ================= SCORE CARD ================= */
+
+.card{
+  text-align:center;
+  padding:20px;
+}
+
+/* ================= CIRCLE ================= */
+
+.circle{
+  position:relative;
+  width:160px;
+  height:160px;
+  margin:auto;
+}
+
+svg{
+  transform:rotate(-90deg);
+}
+
+/* background circle */
+
+.bg{
+  fill:none;
+  stroke:#eee;
+  stroke-width:12;
+}
+
+/* progress circle */
+
+.progress{
+  fill:none;
+  stroke:#641d77;
+  stroke-width:12;
+  stroke-dasharray:440;
+  stroke-dashoffset:110; /* 75% score */
+  stroke-linecap:round;
+}
+
+/* score text */
+
+.score{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  font-size:28px;
+  font-weight:bold;
+  color:#333;
+}
+
+/* bottom text */
+
+.card p{
+  margin-top:15px;
+  font-size:16px;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width:768px){
+
+  .navbar{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .logo img{
+    width:150px;
+    margin-bottom:10px;
+  }
+
+  .nav-links{
+    flex-direction:column;
+    align-items:center;
+    gap:12px;
+  }
+
+  table{
+    width:70%;
+  }
+
+  td{
+    font-size:16px;
+    padding:12px;
+  }
+
+  .title{
+    font-size:24px;
+  }
+
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width:480px){
+
+  .logo img{
+    width:120px;
+  }
+
+  .nav-links a{
+    font-size:15px;
+  }
+
+  table{
+    width:75%;
+    border-width:6px;
+  }
+
+  td{
+    display:block;
+    width:auto;
+    text-align:left;
+    font-size:14px;
+    padding:10px 5px;
+  }
+
+  input{
+    max-width:100%;
+  }
+
+  button{
+    width:100%;
+    padding:12px;
+  }
+
+  .title{
+    font-size:22px;
+  }
+
+  .circle{
+    width:130px;
+    height:130px;
+  }
+
+  .score{
+    font-size:22px;
+  }
+
+}
+
+/* ================= SMALL DEVICES ================= */
+
+@media (max-width:360px){
+
+  .logo img{
+    width:100px;
+  }
+
+  .title{
+    font-size:20px;
+  }
+
+  td{
+    font-size:13px;
+  }
+
+}

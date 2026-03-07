@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="registrationstyle.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo"><img src="logo.jpeg" alt="Logo"></div>
+    <ul class="nav-links">
+      <li><a href="admin.html">Home</a></li>
+      <li><a href="result.html">Result</a></li>
+      <li><a href="ScoreEntry.html">Score Entry</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h2>Student Registration</h2>
+
+    <form id="studentForm">
+
+      <!-- Student Details -->
+      <div class="section-title">Student Details</div>
+      <div class="form-grid">
+        <input type="text" class="required" id="name" placeholder="Full Name (*required)">
+        <select id="gender">
+          <option disabled selected>Select Gender</option>
+          <option>Male</option>
+          <option>Female</option>
+          <option>Others</option>
+        </select>
+        <input type="date" id="dob">
+        <input type="text" id="nationality" placeholder="Nationality">
+        <input type="text" id="religion" placeholder="Religion">
+        <input type="text" id="motherTongue" placeholder="Mother Tongue">
+        <input type="text" id="aadhar" placeholder="Aadhar Number">
+        <input type="text" id="registrationNumber" placeholder="Registration Number">
+      </div>
+
+      <!-- Parent Details -->
+      <div class="section-title">Parent Details</div>
+      <div class="form-grid">
+        <input type="text" id="fatherName" placeholder="Father Name">
+        <input type="text" id="fatherEducation" placeholder="Father Education">
+        <input type="text" id="fatherOccupation" placeholder="Father Occupation">
+        <input type="text" id="motherName" placeholder="Mother Name">
+        <input type="text" id="motherEducation" placeholder="Mother Education">
+        <input type="text" id="motherOccupation" placeholder="Mother Occupation">
+        <input type="text" id="primaryContact" placeholder="Primary Contact Number">
+        <input type="text" id="secondaryContact" placeholder="Secondary Contact Number">
+        <input type="text" id="address1" placeholder="Address Line 1">
+        <input type="text" id="address2" placeholder="Address Line 2">
+        <input type="text" id="district" placeholder="District">
+        <input type="text" id="state" placeholder="State">
+        <input type="text" id="country" placeholder="Country">
+      </div>
+
+      <!-- Education Details -->
+      <div class="section-title">Education Details</div>
+      <div class="form-grid">
+        <input type="text" id="previousSchool" placeholder="Previous School">
+        <input type="text" id="board" placeholder="Board of Education">
+        <input type="text" id="curriculum" placeholder="Curriculum">
+        <input type="text" id="passClass" placeholder="Pass Out Class">
+        <input type="text" id="percentage" placeholder="Percentage Achieved">
+        <input type="text" id="withdrawReason" placeholder="Reason for Withdrawal">
+      </div>
+
+      <div class="btn-container">
+        <button type="submit" id="registerBtn">Register</button>
+      </div>
+
+      <p id="message"></p>
+
+    </form>
+  </div>
+
+  <!-- Firebase libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+
+  <!-- Your script -->
+  <script src="script.js"></script>
+
+</body>
+</html>
