@@ -114,15 +114,15 @@ if(score===0){
     if(regNumberOnly >= 150004 && regNumberOnly <= 150021){
 
         msgBox.innerHTML = `
-        You are not eligible for the scholarship.
+        Thank you for appearing for the Scholarship Entrance Assessment. While the scholarship criteria have not been met in this attempt, the student is eligible for admission. We believe in nurturing each child’s potential and look forward to their continued progress with us.
+For assistance, please feel free to contact the school office at [9361616767].
         `;
 
     } else {
 
         msgBox.innerHTML = `
-        You are not eligible for scholarship.<br>
-        But you are getting admission in our school.<br>
-        Contact the school office for further admission process.
+       Thank you for appearing for the Scholarship Entrance Assessment. While the scholarship criteria have not been met in this attempt, the student is eligible for admission. We believe in nurturing each child’s potential and look forward to their continued progress with us.
+For assistance, please feel free to contact the school office at [9361616767].
         `;
 
     }
