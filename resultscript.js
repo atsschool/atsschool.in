@@ -101,7 +101,7 @@ function getResult(){
     document.getElementById("circleBox").style.display = "none";
     document.getElementById("scoreText").style.display = "none";
     document.getElementById("scoreTitle").style.display = "none";
-    document.getElementById("scholarship").innerText = data.score;
+    // document.getElementById("scholarship").innerText = data.score;
 
     const regNum = data.registrationNumber;
     const regNumberOnly = parseInt(regNum.replace("ATS", ""));
