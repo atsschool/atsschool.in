@@ -18,7 +18,6 @@ firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
 
-
 // ================= SCORE ANIMATION =================
 
 function animateScore(finalScore){
@@ -31,36 +30,37 @@ function animateScore(finalScore){
     const radius = 70;
     const circumference = 2 * Math.PI * radius;
 
+    // ✅ IMPORTANT FIX
     circle.style.strokeDasharray = circumference;
+    circle.style.strokeDashoffset = circumference;
 
     const interval = setInterval(function(){
 
-        if(score >= finalScore){
+        if(score > finalScore){
             clearInterval(interval);
+            return;
         }
 
         const offset = circumference - (score / 100) * circumference;
 
         circle.style.strokeDashoffset = offset;
-
         text.innerText = score + "%";
 
         score++;
 
-    },75);
+    }, 30);
 
 }
-
 
 
 // ================= GET RESULT FROM DATABASE =================
 
 function getResult(){
 
-    const regNumber = document.getElementById("searchReg").value;
+    const regNumber = document.getElementById("searchReg").value.trim().toUpperCase();
     const DOB = document.getElementById("searchDOB").value;
 
-    if(regNumber.trim() === ""|| DOB === "" ){
+    if(regNumber === "" || DOB === ""){
         alert("Enter Registration Number & Date of Birth");
         return;
     }
@@ -73,24 +73,67 @@ function getResult(){
 
             const data = childSnapshot.val();
 
-            if(data.registrationNumber === regNumber&& data.dob==DOB){
-                document.getElementById("LOGIN").style.display = "none";
-                document.getElementById("result").style.display = "table";
+            if(data.registrationNumber === regNumber && data.dob == DOB){
 
                 found = true;
+
+                document.getElementById("LOGIN").style.display = "none";
+                document.getElementById("result").style.display = "table";
 
                 document.getElementById("studentName").innerText = data.name;
                 document.getElementById("registrationNumber").innerText = data.registrationNumber;
                 document.getElementById("dob").innerText = data.dob;
-                
 
-                document.getElementById("class").innerText = "Class 9";
+                document.getElementById("class").innerText = "Class 9 and 10";
                 document.getElementById("year").innerText = "2026-2027";
+if(score===0){
+    document.getElementById("scholarship").innerText = data.score;
+}else{
+                document.getElementById("scholarship").innerText = data.score+"%" +" + "+data.score+"%";}
 
-                document.getElementById("scholarship").innerText = data.score;
+                let score = parseInt(data.score * 2) || 0;
 
-                // Animate score circle
-                animateScore(data.score);
+                // ✅ RESET UI EVERY TIME
+                document.getElementById("circleBox").style.display = "block";
+                document.getElementById("scoreText").style.display = "block";
+                document.getElementById("scoreTitle").style.display = "block";
+                document.getElementById("noMsg").style.display = "none";
+
+                if(score === 0){
+
+    document.getElementById("circleBox").style.display = "none";
+    document.getElementById("scoreText").style.display = "none";
+    document.getElementById("scoreTitle").style.display = "none";
+
+    const regNum = data.registrationNumber;
+    const regNumberOnly = parseInt(regNum.replace("ATS", ""));
+
+    const msgBox = document.getElementById("noMsg");
+
+    // Range: ATS150004 to ATS150021
+    if(regNumberOnly >= 150004 && regNumberOnly <= 150021){
+
+        msgBox.innerHTML = `
+        You are not eligible for the scholarship.
+        `;
+
+    } else {
+
+        msgBox.innerHTML = `
+        You are not eligible for scholarship.<br>
+        But you are getting admission in our school.<br>
+        Contact the school office for further admission process.
+        `;
+
+    }
+
+    msgBox.style.display = "block";
+
+}else {
+
+                    // ✅ SHOW ANIMATION
+                    animateScore(score);
+                }
 
             }
 

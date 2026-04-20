@@ -83,22 +83,25 @@
 
 <div class="card">
 
-<h2>Scholarship Score</h2>
+<h2 id="scoreTitle">Scholarship Score</h2>
 
-<div class="circle">
+<div class="circle" id="circleBox">
 
 <svg width="160" height="160">
-
 <circle class="progress" id="progressCircle" cx="80" cy="80" r="70"></circle>
-
-
 </svg>
 
 <div class="score" id="score">0%</div>
 
 </div>
 
-<p>Entrance Exam Score</p>
+<p id="scoreText">Entrance Exam Score</p>
+
+<!-- ✅ MESSAGE FOR 0 SCORE -->
+<p id="noMsg" style="display:none; color:red; font-weight:bold;">
+Your ward is not eligible for getting scholarship.<br>
+Please contact school office for admission process.
+</p>
 
 </div>
 
