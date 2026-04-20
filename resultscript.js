@@ -86,10 +86,7 @@ function getResult(){
 
                 document.getElementById("class").innerText = "Class 9 and 10";
                 document.getElementById("year").innerText = "2026-2027";
-if(score===0){
-    document.getElementById("scholarship").innerText = data.score;
-}else{
-                document.getElementById("scholarship").innerText = data.score+"%" +" + "+data.score+"%";}
+       
 
                 let score = parseInt(data.score * 2) || 0;
 
@@ -104,6 +101,7 @@ if(score===0){
     document.getElementById("circleBox").style.display = "none";
     document.getElementById("scoreText").style.display = "none";
     document.getElementById("scoreTitle").style.display = "none";
+    document.getElementById("scholarship").innerText = data.score;
 
     const regNum = data.registrationNumber;
     const regNumberOnly = parseInt(regNum.replace("ATS", ""));
@@ -130,7 +128,7 @@ For assistance, please feel free to contact the school office at [9361616767].
     msgBox.style.display = "block";
 
 }else {
-
+ document.getElementById("scholarship").innerText = data.score+"%" +" + "+data.score+"%";
                     // ✅ SHOW ANIMATION
                     animateScore(score);
                 }
